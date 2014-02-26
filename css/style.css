@@ -13,7 +13,9 @@ border:0px;
 
 }
 body {padding: 70px 5% 0 5%}
-
+.navbar-brand {
+	padding-left:100px;
+}
 
 .nav > li > a {
     font-size:18px;
