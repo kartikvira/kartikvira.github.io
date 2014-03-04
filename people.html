@@ -3,7 +3,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="css/style.css">
-    <script src="http://use.edgefonts.net/merriweather:n9,n7,n4,n3:all.js"></script>
     <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
     <script src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
 
@@ -15,7 +14,7 @@
 
     <!-- Latest compiled and minified JavaScript -->
     <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
-    <link href='http://fonts.googleapis.com/css?family=News+Cycle:400,700' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Merriweather|News+Cycle|IM+Fell+English:400italic' rel='stylesheet' type='text/css'>    
     <title>A Brief History of Economic Thought</title>
 </head>
 
@@ -29,17 +28,17 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="#">
+                <a class="navbar-brand" href="index.html">
                     <img id="smithbar" src="media/smith.jpg"></img> History of Economics
                 </a>
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li class="active">
-                        <a href="#">Overview</a>
-                    </li>
                     <li>
-                        <a href="#people">Some defunct economists</a>
+                        <a href="index.html">Overview</a>
+                    </li>
+                    <li class="active">
+                        <a href="people.html">Some defunct economists</a>
                     </li>
                     <li>
                         <a href="#books">Academic scribblings</a>
@@ -78,14 +77,21 @@
     </div>
     <h1>Some defunct economists</h1>
     <h2>(and a few who are still alive)</h2>
-    <table>
-        <tr>
-            <td>François Quesnay</td>
-            <td>Adam Smith</td>
-            <td>Thomas Malthus</td>
-            <td>David Ricardo</td>
-        </tr>
-    </table>
+    <div class="tree">
+        <ul>
+            <li>
+                <a href="#"><img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Quesnay_Portrait.jpg" class="family" /><br />Francois Quesnay</a>
+                <ul><li>
+                    <a href="#"><img src="http://www.holyrood.com/wp-content/uploads/2014/01/adam-smith.jpg" class="family" /><br />Adam Smith</a>
+                    <ul><li>
+                        <a href="#"><img src="http://s23.postimg.org/nup3rm27v/David_Ricardo.jpg" class="family" /><br />David Ricardo</a>
+                    </li><li>
+                        <a href="#"><img src="https://upload.wikimedia.org/wikipedia/commons/3/32/Thomas_Robert_Malthus.jpg" class="family" /><br />Thomas Malthus</a>
+                    </li></ul>
+                </li></ul>
+            </li>
+        </ul>
+    </div>
     </body>
 
 </html>
