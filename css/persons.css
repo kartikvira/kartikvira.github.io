@@ -1,0 +1,15 @@
+.bio tr th {
+	padding-left:10px;
+	padding-right:10px;
+	font-family:News Cycle;
+}
+
+.bio tr td {
+	padding-left:10px;
+	padding-right:10px;
+	font-family:News Cycle;
+}
+
+.bio {
+	float:right;
+}
