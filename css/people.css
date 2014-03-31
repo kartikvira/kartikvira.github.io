@@ -6,7 +6,7 @@
 .tree {
     margin-left:auto;
     margin-right:auto;
-    width:600px;
+    width:1000px;
 }
 .tree ul {
 	padding-top: 20px; 
@@ -106,5 +106,8 @@ right connector from last child*/
 .tree li a:hover+ul ul::before{
 	border-color:  #94a0b4;
 }
-
+.blank {
+	border: 0 none !important;
+	color:white;
+}
 /*End family tree CSS*/
