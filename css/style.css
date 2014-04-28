@@ -29,3 +29,5 @@ blockquote {
     font-size:13px !important;
     font-style:italic;
 }
+.content {float:left;
+	width: calc(100% - 400px);}
