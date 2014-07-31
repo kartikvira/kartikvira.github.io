@@ -1,0 +1,134 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="../css/style.css">
+    
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="../css/bootstrap.css">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="../css/bootstrap-theme.css">
+
+
+
+    <!-- Latest compiled and minified JavaScript -->
+    
+    <link href='http://fonts.googleapis.com/css?family=Merriweather|News+Cycle|IM+Fell+English:400italic' rel='stylesheet' type='text/css'>
+
+<title>400 Years of Scarcity</title>
+</head>
+
+<body>
+    <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand active" href="../index.html">
+                    <img id="smithbar" src="../media/smith.jpg"></img> History of Economics
+                </a>
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li>
+                        <a href="../index.html">Overview</a>
+                    </li>
+                    <li>
+                        <a href="people.html">Some defunct economists</a>
+                    </li>
+                    <li>
+                        <a href="#books">Academic scribblings</a>
+                    </li>
+                    <li class="active">
+                        <a href="ideas.html">Dangerous ideas</a>
+                    </li>
+                    <!-- <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown
+                            <b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a href="#">Action</a>
+                            </li>
+                            <li>
+                                <a href="#">Another action</a>
+                            </li>
+                            <li>
+                                <a href="#">Something else here</a>
+                            </li>
+                            <li class="divider"></li>
+                            <li class="dropdown-header">Nav header</li>
+                            <li>
+                                <a href="#">Separated link</a>
+                            </li>
+                            <li>
+                                <a href="#">One more separated link</a>
+                            </li>
+                        </ul>
+                    </li> -->
+                </ul>
+            </div>
+            <!--/.nav-collapse -->
+        </div>
+    </div>
+    <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+        <script src="http://cdn.jsdelivr.net/qtip2/2.2.0/jquery.qtip.min.js"></script>
+    <script src="http://imagesloaded.desandro.com/imagesloaded.pkgd.min.js"></script>
+    <link rel="stylesheet" href="../css/jquery.qtip.css">
+    <script >
+ $(document).ready(function()
+ {
+     // MAKE SURE YOUR SELECTOR MATCHES SOMETHING IN YOUR HTML!!!
+     $('.hasTooltip').each(function() {
+         $(this).qtip({
+            content: {
+                text: function(event, api) {
+                     $.ajax({
+				                url: api.elements.target.attr('id') +'.html', // URL to the JSON file
+				                type: 'GET', // POST or GET
+				                dataType: 'html', // Tell it we're retrieving JSON
+				                data: {
+				                    id: $(this).attr('id') // Pass through the ID of the current element matched by '.selector'
+				                },
+				            })
+                    .then(function(data) {
+                    	var content = data
+                        // Set the tooltip content upon successful retrieval
+                        api.set('content.text', content);
+                    }, function(xhr, status, error) {
+                        // Upon failure... set the tooltip content to error
+                        api.set('content.text', status + ': ' + error);
+                    });
+        
+                    return 'Loading...'; // Set some initial text
+                }
+            },
+            position: {
+                viewport: $(window)
+            },
+            style: {
+            		classes: 'qtip-bootstrap tooltip',
+            		width:500
+            	},
+            hide: {
+                fixed: true,
+                delay: 300
+            }
+         });
+     });});
+    </script>  
+    <h1>Business Cycles</h1>
+The existence of, causes of, and cures for business cycles are one of the most controversial areas in economics. Initial thinking on the existence of business cycles stems from Say's Law. Jean-Baptiste Say argued that "supply creates its own demand"; the value of what people produce is equal to what they consume, so there can never be a situation where the total supply of products exceeds its demand. This implies that any recessions are caused by an incorrect level of production for particular goods, not for the entire economy. There were widespread debates on whether this law was true in the short run among the Classical economists, particularly Ricardo and Malthus;
+</body>
+</html>
