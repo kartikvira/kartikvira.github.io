@@ -14,7 +14,8 @@
     <!-- Optional theme -->
     <link rel="stylesheet" href="../css/bootstrap-theme.css">
 
-
+    <link rel="stylesheet" href="../css/jquery.qtip.css">
+    <link rel="stylesheet" type="text/css" href="../css/jquery.fullPage.css" />
 
     <!-- Latest compiled and minified JavaScript -->
     
@@ -82,10 +83,13 @@
     </div>
     <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
     <script src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.11.0/jquery-ui.min.js"></script>
     <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
         <script src="http://cdn.jsdelivr.net/qtip2/2.2.0/jquery.qtip.min.js"></script>
     <script src="http://imagesloaded.desandro.com/imagesloaded.pkgd.min.js"></script>
-    <link rel="stylesheet" href="../css/jquery.qtip.css">
+
+
+<script type="text/javascript" src="../js/jquery.fullPage.js"></script>
     <script >
  $(document).ready(function()
  {
@@ -115,8 +119,10 @@
                 }
             },
             position: {
-                viewport: $(window)
-            },
+                viewport: $(window),
+                adjust: {
+                    method: 'shift'}
+                },
             style: {
             		classes: 'qtip-bootstrap tooltip',
             		width:500
@@ -128,7 +134,31 @@
          });
      });});
     </script>  
-    <h1>Business Cycles</h1>
-The existence of, causes of, and cures for business cycles are one of the most controversial areas in economics. Initial thinking on the existence of business cycles stems from Say's Law. Jean-Baptiste Say argued that "supply creates its own demand"; the value of what people produce is equal to what they consume, so there can never be a situation where the total supply of products exceeds its demand. This implies that any recessions are caused by an incorrect level of production for particular goods, not for the entire economy. There were widespread debates on whether this law was true in the short run among the Classical economists, particularly Ricardo and Malthus;
+<script>
+$(document).ready(function() {
+    $('#fullpage').fullpage({
+            navigation: true,
+            navigationPosition: 'right',
+            navigationTooltips: ['Classical','Marx', 'Henry George','Austrian', 'Keynes'],
+            css3: true
+        });
+});
+</script>
+<div id="fullpage">
+<div class="section">
+The existence of, causes of, and cures for business cycles are one of the most controversial areas in economics. Initial thinking on the existence of business cycles stems from Say's Law. Jean-Baptiste Say argued that "supply creates its own demand"; the value of what people produce is equal to what they consume, so there can never be a situation where the total supply of products exceeds its demand. This implies that any recessions are caused by an incorrect level of production for particular goods, not for the entire economy. There were widespread debates on whether this law was true in the short run among the Classical economists, particularly <a class="hasTooltip" id ="Ricardo">Ricardo</a> and <a class="hasTooltip" id="Malthus">Malthus</a>; Malthus' arguments against the law were not generally accepted at the time, but they foreshadow arguments by Keynes and Marx. The first person to conceive of the business cycle - recurring patterns of growth and recession - was Sismondi.</div>
+<div class="section">
+    <a class="hasTooltip" id="Marx">Marx</a> brought the idea of the business cycle to greater prominence. In various books, Marx argued that regular crises were inherent to capitalism. He thought that they would repeatedly overaccumulate capital, to the point where they were no longer able to sell all of the goods that they produced. This would cause the rate of profit to fall, many businesses to fail and capital to be liquidated. He was dismissive of Say's Law, and called Say "a miserable individual". This idea that crises were regular and unavoidable in a  was new to economics, and formed part of Marx's criticisms of capitalism as a system. Evidence from the past 150 years appears to have borne Marx out on this point - try as economists might, they have not yet been able to avoid recessions entirely.
+</div>
+<div class="section">
+    <a class="hasTooltip" id="George">Henry George</a> had a theory of the business cycle based on land. He believed in Say's Law to an extent, and argued that crises were a result of a reduction in production. This was caused by speculation on land driving land prices up to a level where it was too costly for them to continue producing, forcing them to reduce their output and triggering a collapse in land prices as demand for land fell. This theory was not generally accepted, but it bears a remarkable similarity to explanations of the crisis in 2008, which was driven by a bubble in mortgages and house prices in the United States.
+</div>
+<div class="section">
+An early but persistent theory of the business cycle was Austrian Business Cycle Theory, so called because its key advocates <a class="hasTooltip" id="Mises">Ludwig von Mises</a> and <a class="hasTooltip" id="Hayek">Friedrich A. von Hayek</a> were both from Austria. Austrian Business Cycle Theory built on a theory developed by Knut Wicksell of the natural rate of interest, a rate of interest that balances the rate at which people want to save and invest in the economy. In an economy with a currency without a constraint on the money supply (such as the gold standard) the government would be tempted to push interest rates below the natural rate, so that credit is more freely available and unemployment is lower. This would lead to malinvestment, as too much investment took place. When interest rates inevitably rose towards the natural rate, these investments would prove unprofitable and have to be liquidated, leading to a fall in output and a rise in unemployment. Therefore business cycles could be avoided if the government resisted the pressure to lower interest rates, even in recessions. Again, this theory has not been given a great deal of academic support, particularly since Keynes' theories.
+</div>
+<div class="section">
+<a class="hasTooltip" id="Keynes">Keynes'</a> <i>General Theory</i>, published in response to the Great Depression, transformed the mainstream understanding of business cycles, which had barely developed from the Say/Ricardo idea that markets would naturally reach equilibrium. Keynes developed the concept of aggregate demand as the sum of consumption, investment and government spending. A fluctuation in any of these would affect output and prices, but Keynes observed that prices tend not to change in the short run, and so output would be affected most. Thus fluctuations in aggregate demand, due to variations in consumer confidence, drive the business cycle. Keynes' policy prescription was that the government should vary its level of spending to offset the fluctuations in consumption and investment, thus limiting the amount that they would affect aggregate demand and unemployment. This theory became very influential, and was dominant for approximately 30 years after the War.
+</div>
+</div>
 </body>
 </html>

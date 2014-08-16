@@ -1,6 +1,6 @@
 h1,h2 {font-family: 'News Cycle', sans-serif}
 .navbar {font-family: 'News Cycle', sans-serif}
-body {font-family: merriweather, georgia, serif}
+body {font-family: merriweather, georgia, serif;}
 iframe {display:block;
 text-align: center;
 margin: 0 auto;}
@@ -35,4 +35,12 @@ blockquote {
 .tooltip {
 	width:500px;
 	max-width:500px;
+}
+#fullpage {
+	width:75%;
+	margin-left:50px;
+	margin-right:auto;
+}
+.section {
+	font-size:18px;
 }
