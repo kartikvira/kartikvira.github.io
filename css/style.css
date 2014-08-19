@@ -37,10 +37,18 @@ blockquote {
 	max-width:500px;
 }
 #fullpage {
-	width:75%;
 	margin-left:50px;
-	margin-right:auto;
+	margin-right:100px;
 }
 .section {
 	font-size:18px;
+}
+.minibio {
+	max-width:150px; 
+	float:right
+}
+.bio {
+	max-width:300px;
+	float:right;
+	padding:10px;
 }
