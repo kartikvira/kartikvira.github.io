@@ -39,15 +39,13 @@
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li>
+                    <li class="active">
                         <a href="index.html">Overview</a>
                     </li>
                     <li>
-                        <a href="ideas/people.html">Some defunct economists</a>
+                        <a href="people.html">Some defunct economists</a>
                     </li>
-                    <li>
-                        <a href="#books">Academic scribblings</a>
-                    </li>
+                    
                     <li>
                         <a href="ideas.html">Dangerous ideas</a>
                     </li>
@@ -97,7 +95,7 @@
                 content: {
                     text: function(event, api) {
                         $.ajax({
-                            url: api.elements.target.attr('id') + '.html', // URL to the JSON file
+                            url: 'ideas/' + api.elements.target.attr('id') + '.html', // URL to the JSON file
                             type: 'GET', // POST or GET
                             dataType: 'html', // Tell it we're retrieving JSON
                             data: {
