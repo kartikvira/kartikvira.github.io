@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="css/style.css">
-    
+
 
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="css/bootstrap.css">
@@ -17,10 +17,10 @@
     <link rel="stylesheet" href=".css/jquery.qtip.css">
 
     <!-- Latest compiled and minified JavaScript -->
-    
+
     <link href='http://fonts.googleapis.com/css?family=Merriweather|News+Cycle|IM+Fell+English:400italic' rel='stylesheet' type='text/css'>
 
-<title>A History of Economic Thought</title>
+    <title>A History of Economic Thought</title>
 </head>
 
 <body>
@@ -34,7 +34,7 @@
                     <span class="icon-bar"></span>
                 </button>
                 <a class="navbar-brand active" href="index.html">
-                    <img id="smithbar" src="media/smith.jpg"></img> History of Economics
+                    <img id="smithbar" src="media/smith.jpg"></img>History of Economics
                 </a>
             </div>
             <div class="navbar-collapse collapse">
@@ -88,55 +88,59 @@
     <script src="js/imagesloaded.pkgd.min.js"></script>
     <link rel="stylesheet" href="css/jquery.qtip.css">
     <script type="text/javascript" src="js/jquery.fullPage.js"></script>
-    
-    <script >
- $(document).ready(function()
- {
-     // MAKE SURE YOUR SELECTOR MATCHES SOMETHING IN YOUR HTML!!!
-     $('.hasTooltip').each(function() {
-         $(this).qtip({
-            content: {
-                text: function(event, api) {
-                     $.ajax({
-                                url: api.elements.target.attr('id') +'.html', // URL to the JSON file
-                                type: 'GET', // POST or GET
-                                dataType: 'html', // Tell it we're retrieving JSON
-                                data: {
-                                    id: $(this).attr('id') // Pass through the ID of the current element matched by '.selector'
-                                },
-                            })
-                    .then(function(data) {
-                        var content = data
-                        // Set the tooltip content upon successful retrieval
-                        api.set('content.text', content);
-                    }, function(xhr, status, error) {
-                        // Upon failure... set the tooltip content to error
-                        api.set('content.text', status + ': ' + error);
-                    });
-        
-                    return 'Loading...'; // Set some initial text
-                }
-            },
-            position: {
-                viewport: $(window),
-                adjust: {
-                    method: 'shift'}
+
+    <script>
+    $(document).ready(function() {
+        // MAKE SURE YOUR SELECTOR MATCHES SOMETHING IN YOUR HTML!!!
+        $('.hasTooltip').each(function() {
+            $(this).qtip({
+                content: {
+                    text: function(event, api) {
+                        $.ajax({
+                            url: api.elements.target.attr('id') + '.html', // URL to the JSON file
+                            type: 'GET', // POST or GET
+                            dataType: 'html', // Tell it we're retrieving JSON
+                            data: {
+                                id: $(this).attr('id') // Pass through the ID of the current element matched by '.selector'
+                            },
+                        })
+                            .then(function(data) {
+                                var content = data
+                                    // Set the tooltip content upon successful retrieval
+                                api.set('content.text', content);
+                            }, function(xhr, status, error) {
+                                // Upon failure... set the tooltip content to error
+                                api.set('content.text', status + ': ' + error);
+                            });
+
+                        return 'Loading...'; // Set some initial text
+                    }
                 },
-            style: {
+                position: {
+                    viewport: $(window),
+                    adjust: {
+                        method: 'shift'
+                    }
+                },
+                style: {
                     classes: 'qtip-bootstrap tooltip',
-                    width:500
+                    width: 500
                 },
-            hide: {
-                fixed: true,
-                delay: 300
-            }
-         });
-     });});
-    </script>  
+                hide: {
+                    fixed: true,
+                    delay: 300
+                }
+            });
+        });
+    });
+    </script>
     <h1>400 Years of Scarcity: a history of economic thought</h1>
     <blockquote>
-    The ideas of economists and political philosophers, both when they are right and when they are wrong, are more powerful than is commonly understood. Indeed the world is ruled by little else. Practical men, who believe themselves to be quite exempt from any intellectual influences, are usually the slaves of some defunct economist. Madmen in authority, who hear voices in the air, are distilling their frenzy from some academic scribbler of a few years back. I am sure that the power of vested interests is vastly exaggerated compared with the gradual encroachment of ideas. Not, indeed, immediately, but after a certain interval; for in the field of economic and political philosophy there are not many who are influenced by new theories after they are twenty-five or thirty years of age, so that the ideas which civil servants and politicians and even agitators apply to current events are not likely to be the newest. But, soon or late, it is ideas, not vested interests, which are dangerous for good or evil.
-    <footer><cite><a class="hasTooltip" id="Keynes">John Maynard Keynes</a></cite></footer>  
+        The ideas of economists and political philosophers, both when they are right and when they are wrong, are more powerful than is commonly understood. Indeed the world is ruled by little else. Practical men, who believe themselves to be quite exempt from any intellectual influences, are usually the slaves of some defunct economist. Madmen in authority, who hear voices in the air, are distilling their frenzy from some academic scribbler of a few years back. I am sure that the power of vested interests is vastly exaggerated compared with the gradual encroachment of ideas. Not, indeed, immediately, but after a certain interval; for in the field of economic and political philosophy there are not many who are influenced by new theories after they are twenty-five or thirty years of age, so that the ideas which civil servants and politicians and even agitators apply to current events are not likely to be the newest. But, soon or late, it is ideas, not vested interests, which are dangerous for good or evil.
+        <footer>
+            <cite><a class="hasTooltip" id="Keynes">John Maynard Keynes</a>
+            </cite>
+        </footer>
     </blockquote>
     <p>Economics is perhaps the single most important academic discipline of modern times, affecting the lives of every person living in our globalised society. One need only need to look to Greece or Tunisia to see the importance of economic ideas on the day-to-day life of ordinary people. The great political divides in society primarily focus on differing visions of the economy, and huge events in the course of history for the past 250 years can be traced to a powerful economic idea in the right place, at the right time. Yet, as economic debates rage within academia and the wider social sphere, there is little discussion of the origins of these ideas. Economics is a relatively young discipline, the modern study of which began over 200 years after Copernicus proposed that the Earth went round the Sun, but it has seen rapid development during this time.</p>
 

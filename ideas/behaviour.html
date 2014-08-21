@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="../css/style.css">
-    
+
 
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="../css/bootstrap.css">
@@ -18,10 +18,10 @@
     <link rel="stylesheet" type="text/css" href="../css/jquery.fullPage.css" />
 
     <!-- Latest compiled and minified JavaScript -->
-    
+
     <link href='http://fonts.googleapis.com/css?family=Merriweather|News+Cycle|IM+Fell+English:400italic' rel='stylesheet' type='text/css'>
 
-<title>Human Behaviour - a History of Economic Thought</title>
+    <title>Human Behaviour - a History of Economic Thought</title>
 </head>
 
 <body>
@@ -35,7 +35,7 @@
                     <span class="icon-bar"></span>
                 </button>
                 <a class="navbar-brand active" href="../index.html">
-                    <img id="smithbar" src="../media/smith.jpg"></img> History of Economics
+                    <img id="smithbar" src="../media/smith.jpg"></img>History of Economics
                 </a>
             </div>
             <div class="navbar-collapse collapse">
@@ -89,72 +89,74 @@
     <script src="../js/imagesloaded.pkgd.min.js"></script>
     <link rel="stylesheet" href="../css/jquery.qtip.css">
     <script type="text/javascript" src="../js/jquery.fullPage.js"></script>
-    <script >
- $(document).ready(function()
- {
-     // MAKE SURE YOUR SELECTOR MATCHES SOMETHING IN YOUR HTML!!!
-     $('.hasTooltip').each(function() {
-         $(this).qtip({
-            content: {
-                text: function(event, api) {
-                     $.ajax({
-				                url: api.elements.target.attr('id') +'.html', // URL to the JSON file
-				                type: 'GET', // POST or GET
-				                dataType: 'html', // Tell it we're retrieving JSON
-				                data: {
-				                    id: $(this).attr('id') // Pass through the ID of the current element matched by '.selector'
-				                },
-				            })
-                    .then(function(data) {
-                    	var content = data
-                        // Set the tooltip content upon successful retrieval
-                        api.set('content.text', content);
-                    }, function(xhr, status, error) {
-                        // Upon failure... set the tooltip content to error
-                        api.set('content.text', status + ': ' + error);
-                    });
-        
-                    return 'Loading...'; // Set some initial text
-                }
-            },
-            position: {
-                viewport: $(window),
-                adjust: {
-                    method: 'shift'}
+    <script>
+    $(document).ready(function() {
+        // MAKE SURE YOUR SELECTOR MATCHES SOMETHING IN YOUR HTML!!!
+        $('.hasTooltip').each(function() {
+            $(this).qtip({
+                content: {
+                    text: function(event, api) {
+                        $.ajax({
+                            url: api.elements.target.attr('id') + '.html', // URL to the JSON file
+                            type: 'GET', // POST or GET
+                            dataType: 'html', // Tell it we're retrieving JSON
+                            data: {
+                                id: $(this).attr('id') // Pass through the ID of the current element matched by '.selector'
+                            },
+                        })
+                            .then(function(data) {
+                                var content = data
+                                    // Set the tooltip content upon successful retrieval
+                                api.set('content.text', content);
+                            }, function(xhr, status, error) {
+                                // Upon failure... set the tooltip content to error
+                                api.set('content.text', status + ': ' + error);
+                            });
+
+                        return 'Loading...'; // Set some initial text
+                    }
                 },
-            style: {
-            		classes: 'qtip-bootstrap tooltip',
-            		width:500
-            	},
-            hide: {
-                fixed: true,
-                delay: 300
-            }
-         });
-     });});
-    </script>  
-<script>
-$(document).ready(function() {
-    $('#fullpage').fullpage({
+                position: {
+                    viewport: $(window),
+                    adjust: {
+                        method: 'shift'
+                    }
+                },
+                style: {
+                    classes: 'qtip-bootstrap tooltip',
+                    width: 500
+                },
+                hide: {
+                    fixed: true,
+                    delay: 300
+                }
+            });
+        });
+    });
+    </script>
+    <script>
+    $(document).ready(function() {
+        $('#fullpage').fullpage({
             navigation: true,
             navigationPosition: 'right',
-            navigationTooltips: ['Classical', 'Neoclassical', 'Neoclassical criticism','Behavioural economics'],
+            navigationTooltips: ['Classical', 'Neoclassical', 'Neoclassical criticism', 'Behavioural economics'],
             css3: true
         });
-});
-</script>
-<div id="fullpage">
-<div class="section">
-<h1>Classical, 1800-1850</h1>
-Classical economists did not focus a great deal on the behaviour of individuals, being more concerned with "political economy". However, they laid the foundations for later study. <a class="hasTooltip" id="Smith">Adam Smith</a> famously wrote in <i>The Wealth of Nations</i> "It is not from the benevolence of the butcher, the brewer, or the baker that we expect our dinner, but from their regard to their own interest." So Smith argued that people usually act in their own interest. This view of humans as broadly self-interested has persisted as the default assumption in economics, although even Smith realised that people were not always selfish; in <i>The Theory of Moral Sentiments</i> he wrote that "How selfish soever man may be supposed, there are evidently some principles in his nature, which interest him in the fortune of others, and render their happiness necessary to him, though he derives nothing from it except the pleasure of seeing it."
-</div>
-<div class="section">
-<h1>Neoclassical, 1870-1900</h1>
-    Neoclassical economists, particularly <a class="hasTooltip" id="Jevons">William Stanley Jevons</a>, built on <a class="hasTooltip" id="Smith">Smith's</a> view of humans as self-interested to produce their theory of human behaviour. They also built on the concept of "utility", which had previously been discussed by the philosopher Jeremy Bentham and Classical economist and philosopher John Stuart Mill. Utility was essentially a measurement of pleasure; the foundation of neoclassical economics' theory of behaviour is that people act to maximise their utility. An important contribution was the concept of diminishing marginal utility: the utility gained from the second product a person buys is less than the amount they gain from the first. This limits the quantity of a good that people will buy, as each item has the same cost. Jevons went on to explain that the ratio of marginal utility - the utility from consuming one more unit - between two goods for a particular person must be equal to the ratio of their prices; if not, the person could increase their utility by buying more of the good with the lower relative price and less of the other, until the marginal utility changed (because of diminishing marginal utility) to meet this rule. A neoclassical perspective on human behaviour remains the default in most of economics, and has proved to be a very powerful tool.
-</div>
-<div class="section">
-<h1>Criticism of the neoclassical view, 1900-1940</h1>
-In the early 20th century, many economists disagreed with the neoclassical view on human behaviour, criticising it as too simplistic.
-</div>
+    });
+    </script>
+    <div id="fullpage">
+        <div class="section">
+            <h1>Classical, 1800-1850</h1>
+            Classical economists did not focus a great deal on the behaviour of individuals, being more concerned with "political economy". However, they laid the foundations for later study. <a class="hasTooltip" id="Smith">Adam Smith</a> famously wrote in <i>The Wealth of Nations</i> "It is not from the benevolence of the butcher, the brewer, or the baker that we expect our dinner, but from their regard to their own interest." So Smith argued that people usually act in their own interest. This view of humans as broadly self-interested has persisted as the default assumption in economics, although even Smith realised that people were not always selfish; in <i>The Theory of Moral Sentiments</i> he wrote that "How selfish soever man may be supposed, there are evidently some principles in his nature, which interest him in the fortune of others, and render their happiness necessary to him, though he derives nothing from it except the pleasure of seeing it."
+        </div>
+        <div class="section">
+            <h1>Neoclassical, 1870-1900</h1>
+            Neoclassical economists, particularly <a class="hasTooltip" id="Jevons">William Stanley Jevons</a>, built on <a class="hasTooltip" id="Smith">Smith's</a> view of humans as self-interested to produce their theory of human behaviour. They also built on the concept of "utility", which had previously been discussed by the philosopher Jeremy Bentham and Classical economist and philosopher John Stuart Mill. Utility was essentially a measurement of pleasure; the foundation of neoclassical economics' theory of behaviour is that people act to maximise their utility. An important contribution was the concept of diminishing marginal utility: the utility gained from the second product a person buys is less than the amount they gain from the first. This limits the quantity of a good that people will buy, as each item has the same cost. Jevons went on to explain that the ratio of marginal utility - the utility from consuming one more unit - between two goods for a particular person must be equal to the ratio of their prices; if not, the person could increase their utility by buying more of the good with the lower relative price and less of the other, until the marginal utility changed (because of diminishing marginal utility) to meet this rule. A neoclassical perspective on human behaviour remains the default in most of economics, and has proved to be a very powerful tool.
+        </div>
+        <div class="section">
+            <h1>Criticism of the neoclassical view, 1900-1940</h1>
+            In the early 20th century, many economists disagreed with the neoclassical view on human behaviour, criticising it as too simplistic.
+        </div>
 </body>
+
 </html>
