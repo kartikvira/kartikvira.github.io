@@ -52,3 +52,7 @@ blockquote {
 	float:right;
 	padding:10px;
 }
+ul.ideas{
+	list-style-type:none;
+	font-size:24px;
+}
