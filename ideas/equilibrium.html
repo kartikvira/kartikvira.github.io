@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="/css/bootstrap.css">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="/css/bootstrap-theme.css">
+
+    <link rel="stylesheet" href="/css/jquery.qtip.css">
+    <link rel="stylesheet" type="text/css" href="/css/jquery.fullPage.css" />
+
+    <!-- Latest compiled and minified JavaScript -->
+
+    <link href='http://fonts.googleapis.com/css?family=Merriweather|News+Cycle|IM+Fell+English:400italic' rel='stylesheet' type='text/css'>
+
+    <title>Equilibrium - a History of Economic Thought</title>
+</head>
+
+<body>
+    <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand active" href="/index.html">
+                    <img id="smithbar" src="/media/smith.jpg"></img>History of Economics
+                </a>
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li>
+                        <a href="/index.html">Overview</a>
+                    </li>
+                    <li>
+                        <a href="/people.html">Some defunct economists</a>
+                    </li>
+                    
+                    <li class="active">
+                        <a href="/ideas.html">Dangerous ideas</a>
+                    </li>
+                    <!-- <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown
+                            <b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a href="#">Action</a>
+                            </li>
+                            <li>
+                                <a href="#">Another action</a>
+                            </li>
+                            <li>
+                                <a href="#">Something else here</a>
+                            </li>
+                            <li class="divider"></li>
+                            <li class="dropdown-header">Nav header</li>
+                            <li>
+                                <a href="#">Separated link</a>
+                            </li>
+                            <li>
+                                <a href="#">One more separated link</a>
+                            </li>
+                        </ul>
+                    </li> -->
+                </ul>
+            </div>
+            <!--/.nav-collapse -->
+        </div>
+    </div>
+    <script src="/js/jquery-1.11.0.min.js"></script>
+    <script src="/js/jquery-migrate-1.2.1.min.js"></script>
+    <script src="/js/jquery-ui.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+    <script src="/js/jquery.qtip.min.js"></script>
+    <script src="/js/imagesloaded.pkgd.min.js"></script>
+    <link rel="stylesheet" href="/css/jquery.qtip.css">
+    <script type="text/javascript" src="/js/jquery.fullPage.js"></script>
+    <script>
+    $(document).ready(function() {
+        // MAKE SURE YOUR SELECTOR MATCHES SOMETHING IN YOUR HTML!!!
+        $('.hasTooltip').each(function() {
+            $(this).qtip({
+                content: {
+                    text: function(event, api) {
+                        $.ajax({
+                            url: api.elements.target.attr('id') + '.html', // URL to the JSON file
+                            type: 'GET', // POST or GET
+                            dataType: 'html', // Tell it we're retrieving JSON
+                            data: {
+                                id: $(this).attr('id') // Pass through the ID of the current element matched by '.selector'
+                            },
+                        })
+                            .then(function(data) {
+                                var content = data
+                                    // Set the tooltip content upon successful retrieval
+                                api.set('content.text', content);
+                            }, function(xhr, status, error) {
+                                // Upon failure... set the tooltip content to error
+                                api.set('content.text', status + ': ' + error);
+                            });
+
+                        return 'Loading...'; // Set some initial text
+                    }
+                },
+                position: {
+                    viewport: $(window),
+                    adjust: {
+                        method: 'shift'
+                    }
+                },
+                style: {
+                    classes: 'qtip-bootstrap tooltip',
+                    width: 500
+                },
+                hide: {
+                    fixed: true,
+                    delay: 300
+                }
+            });
+        });
+    });
+    </script>
+    <script>
+    $(document).ready(function() {
+        $('#fullpage').fullpage({
+            navigation: true,
+            navigationPosition: 'right',
+            navigationTooltips: ['Classical', 'Neoclassical', 'Neoclassical criticism', 'Behavioural economics'],
+            css3: true
+        });
+    });
+    </script>
+    <div id="fullpage">
+        <div class="section">
+        <h1>Background</h1>
+        A large amount of economic theory and analysis is based on the idea of economic equilibrium - the state where economic forces, such as supply and demand, are balanced, and variables, such as price and quantity, are stable. Equilibrium theory sits at the heart of most modern economics.
+        </div>
+        <div class="section">
+        <h1>Classical, 1750-1850</h1>
+        <a class="hasTooltip" id="Smith">Adam Smith</a> discussed the concept of equilibrium in Part I, chapter 7 of <i>The Wealth of Nations</i>. He talks about a "natural price" for everything in the economy, which he defined as "the central price, to which the prices of all commodities are continually gravitating". This analogy of economic forces being like physical forces, pulling variables towards their equilibrium values, has been an influential way of thinking. The concept of equilibrium was extended to the entire economy with Say's Law. Say argued that "supply creates its own demand", meaning there can never be a general surplus in the entire economy, as the income generated from all goods produced is equal to the total spending on all goods produced - in effect arguing that aggregate supply and demand in economy must always be in equilibrium. Say's Law was widely believed in the Classical period (except by <a class="hasTooltip" id="Malthus">Malthus</a>, who had an extended argument with <a class="hasTooltip" id="Ricardo">Ricardo</a> over it) , but has since been criticised by many economists, including <a class="hasTooltip" id="Marx">Marx</a> and, most influentially, <a class="hasTooltip" id="Keynes">Keynes</a>.
+        </div>
+        <div class="section">
+        <h1>Neoclassical, 1870-1910</h1>
+        Neoclassical economics formalised the notion of equilibrium. The key figure in this was <a class="hasTooltip" id="Walras">Léon Walras</a>
