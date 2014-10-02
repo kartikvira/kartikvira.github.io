@@ -45,7 +45,7 @@ blockquote {
 }
 .minibio {
 	max-width:150px; 
-	float:left
+	float: left;
 	margin:5px;
 }
 .bio {
